@@ -3,7 +3,7 @@
 var Bob = function(){};
 
 Bob.prototype.hey = function(str){
-  if(str === ''){
+  if(str.isEmpty()){
     return 'Fine. Be that way!';
   }
   if(str.isOnlyNumber() && str.isQuestion()){
@@ -23,6 +23,11 @@ Bob.prototype.hey = function(str){
   }
   return 'Whatever.';
   
+}
+
+
+String.prototype.isEmpty = function () {
+  return (!this || this.length === 0 || this == '' || !this.trim());
 }
 
 String.prototype.hasAcronym = function () {
