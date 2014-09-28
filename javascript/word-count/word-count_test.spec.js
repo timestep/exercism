@@ -16,17 +16,17 @@ describe("words()", function() {
     expect(words("one fish two fish red fish blue fish")).toEqual(expectedCounts);
   });
 
-  xit("includes punctuation", function() {
+  it("includes punctuation", function() {
     var expectedCounts = { car: 1, ":": 2, carpet: 1, as: 1, java: 1, "javascript!!&@$%^&": 1 };
     expect(words("car : carpet as java : javascript!!&@$%^&")).toEqual(expectedCounts);
   });
 
-  xit("includes numbers", function() {
+  it("includes numbers", function() {
     var expectedCounts = { testing: 2, 1: 1, 2: 1 };
     expect(words("testing 1 2 testing")).toEqual(expectedCounts);
   });
 
-  xit("respects case", function() {
+  it("respects case", function() {
     var expectedCounts = { go: 1, Go:1, GO:1 };
     expect(words("go Go GO")).toEqual(expectedCounts);
   });
