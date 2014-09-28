@@ -31,12 +31,12 @@ describe("words()", function() {
     expect(words("go Go GO")).toEqual(expectedCounts);
   });
 
-  xit("counts properly international characters", function() {
+  it("counts properly international characters", function() {
     var expectedCounts = { "¡Hola!": 1, "¿Qué": 1, "tal?": 1, "Привет!": 1 };
     expect(words("¡Hola! ¿Qué tal? Привет!")).toEqual(expectedCounts);
   });
 
-  xit("counts multiline", function() {
+  it("counts multiline", function() {
     var expectedCounts = { hello: 1, world: 1 };
     expect(words("hello\nworld")).toEqual(expectedCounts);
   });

@@ -5,7 +5,7 @@ var words = function (input) {
 }
 
 String.prototype.countWords = function() {
-  var splitString = this.split(' ');
+  var splitString = this.split('\n').join(' ').split(' ');
   var obj = {};
   for (var i = splitString.length - 1; i >= 0; i--) {
     if(!obj[splitString[i]]){
