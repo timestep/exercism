@@ -3,6 +3,9 @@
 var Bob = function(){};
 
 Bob.prototype.hey = function(str){
+  if(str.isOnlyNumber()){
+    return 'Whatever.';
+  }
   if(str.isAllUpperCase()){
     return 'Whoa, chill out!';
   }
@@ -21,7 +24,7 @@ String.prototype.hasAcronym = function () {
   var splitStrings = this.split(" ");
   for (var i = splitStrings.length - 1; i >= 0; i--) {
     if(splitStrings[i].isAllUpperCase()){
-      return true
+      return true;
     }
   };
   return false;  
@@ -40,6 +43,19 @@ String.prototype.isQuestion = function () {
   } else {
     return false;
   }
+}
+
+String.prototype.isOnlyNumber = function () {
+  var splitStrings = this.split(' ');
+  var isIt = false;
+  for (var i = splitStrings.length - 1; i >= 0; i--) {
+    if(!isNaN(parseInt(splitStrings[i]))){
+      isIt = true;
+    } else {
+      return false;
+    }
+  };
+  return isIt;
 }
 
 String.prototype.isExclimation = function () {
