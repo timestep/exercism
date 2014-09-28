@@ -3,19 +3,21 @@
 var Bob = function(){};
 
 Bob.prototype.hey = function(str){
+  if(str.isOnlyNumber() && str.isQuestion()){
+    return 'Sure.';
+  }
   if(str.isOnlyNumber()){
     return 'Whatever.';
   }
   if(str.isAllUpperCase()){
     return 'Whoa, chill out!';
   }
-  if(str.isExclimation() || str.hasAcronym()){
-    return 'Whatever.';
-  }
   if(str.isQuestion()){
     return 'Sure.';
   }
-
+  if(str.isExclimation() || str.hasAcronym()){
+    return 'Whatever.';
+  }
   return 'Whatever.';
   
 }
