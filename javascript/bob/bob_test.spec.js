@@ -48,27 +48,27 @@ describe("Bob", function() {
     expect(result).toEqual('Sure.');
   });
 
-  xit("shouting with special characters", function() {
+  it("shouting with special characters", function() {
     var result = bob.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xit("shouting with umlauts", function() {
+  it("shouting with umlauts", function() {
     var result = bob.hey("\xdcML\xc4\xdcTS!");
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xit("calmly speaking about umlauts", function() {
+  it("calmly speaking about umlauts", function() {
     var result = bob.hey("\xfcML\xe4\xdcTS");
     expect(result).toEqual('Whatever.');
   });
 
-  xit("shouting with no exclamation mark", function () {
+  it("shouting with no exclamation mark", function () {
     var result = bob.hey('I HATE YOU');
     expect(result).toEqual('Whoa, chill out!');
   });
 
-  xit("statement containing question mark", function() {
+  it("statement containing question mark", function() {
     var result = bob.hey('Ending with a ? means a question.');
     expect(result).toEqual('Whatever.');
   });

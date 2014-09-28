@@ -3,6 +3,9 @@
 var Bob = function(){};
 
 Bob.prototype.hey = function(str){
+  if(str === ''){
+    return 'Fine. Be that way!';
+  }
   if(str.isOnlyNumber() && str.isQuestion()){
     return 'Sure.';
   }
@@ -30,6 +33,10 @@ String.prototype.hasAcronym = function () {
     }
   };
   return false;  
+}
+
+String.prototype.hasSpecial = function () {
+  return /[_\W0-9]/.test(this);
 }
 
 String.prototype.isAllUpperCase = function () {
