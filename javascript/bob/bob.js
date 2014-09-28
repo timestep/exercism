@@ -6,15 +6,25 @@ Bob.prototype.hey = function(str){
   if(str.isAllUpperCase()){
     return 'Whoa, chill out!';
   }
+  if(str.isExclimation() || str.hasAcronym()){
+    return 'Whatever.';
+  }
   if(str.isQuestion()){
     return 'Sure.';
-  }
-  if(str.isExclimation()){
-    return 'Whatever';
   }
 
   return 'Whatever.';
   
+}
+
+String.prototype.hasAcronym = function () {
+  var splitStrings = this.split(" ");
+  for (var i = splitStrings.length - 1; i >= 0; i--) {
+    if(splitStrings[i].isAllUpperCase()){
+      return true
+    }
+  };
+  return false;  
 }
 
 String.prototype.isAllUpperCase = function () {
