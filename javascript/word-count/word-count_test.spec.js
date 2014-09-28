@@ -6,12 +6,12 @@ describe("words()", function() {
     expect(words("word")).toEqual(expectedCounts);
   });
 
-  xit("counts one of each", function() {
+  it("counts one of each", function() {
     var expectedCounts = { one: 1, of: 1, each: 1 };
     expect(words("one of each")).toEqual(expectedCounts);
   });
 
-  xit("counts multiple occurrences", function() {
+  it("counts multiple occurrences", function() {
     var expectedCounts = { one: 1, fish: 4, two: 1, red: 1, blue: 1 };
     expect(words("one fish two fish red fish blue fish")).toEqual(expectedCounts);
   });
